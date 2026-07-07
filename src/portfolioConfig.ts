@@ -14,6 +14,7 @@ export interface Experience {
   role: string;
   company: string;
   logo?: string; // Optional URL or emoji
+  companyUrl?: string; // Optional company website link
   location: string;
   dateRange: string;
   description: string;
@@ -63,6 +64,7 @@ export const portfolioConfig: PortfolioConfig = {
       role: "Software Engineering Intern",
       company: "EdRealm",
       logo: "/edrealm.png",
+      companyUrl: "https://edrealm.in/",
       location: "On-site",
       dateRange: "June 2026 – Present",
       description: "Contributed to the development of secure and scalable backend systems powering payment and blockchain applications. Designed REST APIs, integrated payment gateways, implemented cryptocurrency transaction workflows, and optimized databases while ensuring system security, scalability, and reliability.",

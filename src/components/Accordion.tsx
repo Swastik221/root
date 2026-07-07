@@ -23,7 +23,20 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({ experience }) => {
       >
         <div className="accordion-logo">
           {experience.logo ? (
-            <img src={experience.logo} alt={experience.company} />
+            experience.companyUrl ? (
+              <a
+                href={experience.companyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                title={`Visit ${experience.company} website`}
+                style={{ display: "block" }}
+              >
+                <img src={experience.logo} alt={experience.company} />
+              </a>
+            ) : (
+              <img src={experience.logo} alt={experience.company} />
+            )
           ) : (
             <span>⚡</span>
           )}
