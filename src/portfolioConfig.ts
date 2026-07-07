@@ -63,7 +63,7 @@ export const portfolioConfig: PortfolioConfig = {
     {
       role: "Software Engineering Intern",
       company: "EdRealm",
-      logo: "/edrealm.png",
+      logo: "edrealm.png",
       companyUrl: "https://edrealm.in/",
       location: "On-site",
       dateRange: "June 2026 – Present",

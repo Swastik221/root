@@ -46,7 +46,7 @@ const App: React.FC = () => {
         <header className="header-wrapper">
           <div className="avatar-wrapper">
             <img
-              src="/avatar.png"
+              src="avatar.png"
               alt={`${config.name} Avatar`}
               className="avatar-img"
             />
