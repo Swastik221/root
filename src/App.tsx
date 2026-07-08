@@ -33,6 +33,25 @@ const App: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
+  // Real-time visitor counter with historical base offset (1842)
+  const [visitorCount, setVisitorCount] = React.useState<number>(1842);
+
+  React.useEffect(() => {
+    fetch("https://abacus.jasoncameron.dev/hit/swastik-tiwari/visits")
+      .then((res) => {
+        if (!res.ok) throw new Error("Counter API failed");
+        return res.json();
+      })
+      .then((data) => {
+        if (data && typeof data.value === "number") {
+          setVisitorCount(1842 + data.value);
+        }
+      })
+      .catch((err) => {
+        console.warn("Visitor counter error:", err);
+      });
+  }, []);
+
   // AI Prompt urls
   const encodedQuery = encodeURIComponent(config.searchQuery);
   const chatGptUrl = `https://chatgpt.com/?q=${encodedQuery}`;
@@ -276,7 +295,7 @@ const App: React.FC = () => {
           </div>
           <div className="footer-right">
             <p>
-              Visitors <span className="highlight-text">1,842</span>
+              Visitors <span className="highlight-text">{visitorCount.toLocaleString()}</span>
             </p>
             <p>{config.location} {lucknowTime}</p>
           </div>
