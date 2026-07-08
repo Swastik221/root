@@ -4,6 +4,7 @@ import { portfolioConfig } from "./portfolioConfig";
 import { ExperienceAccordion } from "./components/Accordion";
 import { ProjectGrid } from "./components/ProjectCard";
 import { BottomDock } from "./components/BottomDock";
+import { Analytics } from "@vercel/analytics/react";
 
 const App: React.FC = () => {
   const config = portfolioConfig;
@@ -284,6 +285,9 @@ const App: React.FC = () => {
 
       {/* Floating Bottom Navigation Dock */}
       <BottomDock />
+      
+      {/* Vercel Analytics */}
+      <Analytics />
     </div>
   );
 };
